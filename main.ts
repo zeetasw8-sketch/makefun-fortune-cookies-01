@@ -5,8 +5,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const sourceDir = dirname(fileURLToPath(import.meta.url));
-const targetDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const sourceDir = dirname(fileURLToPath(import.meta.url)), targetDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 
 function loadFortune(): string {
   const raw = readFileSync(join(sourceDir, "line.txt"), "utf8");
